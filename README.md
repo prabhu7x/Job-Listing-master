@@ -13,10 +13,7 @@ Acknowledgements
 
 check out these previews below
 
-[Live URL](https://prabhu7x.github.io/product-list-with-cart-main/)
-<p align="center">
-  <img src="src/assets/preview/mobile-Screenshot.png" alt="Image 1" width="45%" />
-  <img src="src/assets/preview/mobile-confirmed.png" alt="Image 2" width="45%" />
-  <img src="src/assets/preview/desktop-Screenshot.png" alt="Image 2" width="45%" />
-  <img src="src/assets/preview/desktop-confirmed.png" alt="Image 2" width="45%" />
-</p>
+[Live URL](https://prabhu7x.github.io/Job-Listing-master/)
+
+![desktop](/public/previews/desktop-view.png)
+![mobile](/public/previews/mobile-view.png)
