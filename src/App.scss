@@ -1,0 +1,194 @@
+@import url('https://fonts.googleapis.com/css2?family=League+Spartan:wght@100..900&display=swap');
+
+@mixin league-spartan ($weight){
+    font-family: "League Spartan", serif;
+    font-optical-sizing: auto;
+    font-weight: $weight;
+    font-style: normal;
+  }
+
+$Light_Grayish_Cyan_Background: hsl(180, 52%, 96%);
+$Light_Grayish_Cyan_Filter_Tablets: hsl(180, 31%, 95%);
+$Dark_Grayish_Cyan: hsl(180, 8%, 52%);
+$Very-Dark-Grayish-Cyan: hsl(180, 14%, 20%);
+$cyan-dark: rgb(12, 81, 81);
+$cyan-light: rgb(17, 149, 149);
+$App_bg: #5CA4A3;
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+.App {
+    background-color: $App_bg;
+    @include league-spartan(500);
+    transition: all .5s ease-in-out;
+    .bg {
+        width: 100%;
+    }
+}
+
+    .keywordsContainer{
+        position: absolute;
+        width: calc(100% - 3rem);
+        display: flex;
+        justify-content: space-between;
+        background-color: $Light_Grayish_Cyan_Background;
+        box-shadow: 0px 10px 10px rgb(173, 216, 216); 
+        border-radius: 10px;
+        top: 0;
+        transform: translate(0, -50%);
+
+        .keywords {
+                padding: 1rem;
+                display: flex;
+                border-radius: 10px;
+                flex-wrap: wrap;
+                gap: 1rem;
+
+            button {
+                all: unset;
+                display: flex;
+                margin-left: 1rem;
+            }
+            img {
+                padding: .5rem;
+                background-color: $cyan-light;
+                border-radius: 0 5px 5px 0;
+                &:hover {
+                    background-color: $cyan-dark;
+                    cursor: pointer;
+                }
+            }
+            span {
+                padding: .5rem;
+                background-color: rgb(224, 239, 239);
+                border-radius: 5px 0 0 5px;
+            }
+        }
+        .clear {
+            all: unset;
+            color: $Dark_Grayish_Cyan;
+            margin-right: 2rem;
+            cursor: pointer;
+            &:hover {
+                color: $cyan-light;
+                margin-bottom: 0;
+                padding-bottom: 0;
+            }
+        }
+    }
+    
+main {
+    padding: 0 1.5rem;
+    background-color: $Light_Grayish_Cyan_Filter_Tablets;
+    padding-top: 5rem;
+    position: relative;
+
+    article {
+        background-color: $Light_Grayish_Cyan_Filter_Tablets;
+        position: relative;
+        margin-bottom: 2rem;
+        padding: 1.5rem;
+        border-radius: 7px;
+        box-shadow: 0px 10px 10px rgb(173, 216, 216); 
+        &.new-or-featured {
+            border-left: $Dark_Grayish_Cyan 4px solid;
+        }
+        img {
+            width: 50px;
+            position: absolute;
+            transform: translate(-50%, -50%);
+            left: 3rem;
+            padding-bottom: 2.5rem;
+        }
+        h1 {
+            font-size: 1rem;
+            padding-top: 1.5rem;
+            margin-bottom: 1rem;
+            @include league-spartan(700);
+            color: rgb(17, 149, 149);
+            span {
+                color: white;
+                font-size: .7rem;
+                margin-left: 1rem;
+                padding: .4rem .6rem 3px .6rem;
+                border-radius: 20px;
+                &.new {
+                    background-color: $cyan-light;
+                }
+                &.featured {
+                    background-color: $cyan-dark;
+                }
+            }
+        }
+        p {
+            @include league-spartan(700);
+            font-size: 1.2rem;
+            &:hover {
+                color: rgb(12, 81, 81);
+                cursor: pointer;
+            }
+        }
+        .time {
+            display: flex;
+            gap: 1.5rem;
+            border-bottom: 1px gray dotted;
+            overflow: hidden;
+            padding: .8rem 0;
+            color: $Dark_Grayish_Cyan;
+        }
+        .lang {
+            display: flex;
+            flex-wrap: wrap;
+            list-style-type: none;
+            column-gap: 1rem;
+            color: $Very-Dark-Grayish-Cyan;
+            li {
+                background-color: $Light_Grayish_Cyan_Background;
+                padding: .5rem;
+                margin: 1rem 0 0 0;
+                color: rgb(68, 171, 171);
+                border-radius: 5px;
+                background-color: rgb(224, 239, 239);
+                max-width: 100px;
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                &:hover {
+                    cursor: pointer;
+                    background-color: $cyan-dark;
+                    color: $Light_Grayish_Cyan_Filter_Tablets;
+                }
+            }
+        }
+    }
+}
+
+@media screen and (min-width: 500px){
+   .App {
+   }
+
+   main {
+    article {
+        position: initial;
+        display: grid;
+        column-gap: 1rem;
+        align-items: center;
+        grid-template-columns: auto auto 1fr;
+        align-items: center;
+        img {
+            position: initial;
+            transform: initial;
+            padding-bottom: 0;
+            width: auto;
+        }
+        .lang {
+             justify-self: flex-end;
+        }
+        .time {
+            border-bottom: none;
+        }
+    }
+   }
+}
